@@ -1,5 +1,5 @@
 $(function () {
-    var roles = ["Web Developer", "Code Enthusiast","Student", "VITian"];
+    var roles = ["Code Enthusiast","Web Developer", "Student", "VITian"];
     var count = 0;
     var $typeSpan = $("#intro .content h2 span").typist({
       text: roles[count]
@@ -17,6 +17,16 @@ $(function () {
       } else {
         $(".navbar").slideUp(100);
       }
+    });
+    $(".go-down a").click(function (e) {
+      e.preventDefault();
+      var top = $($(this).attr("href")).position().top - 70;
+      $("html, body").animate(
+        {
+          scrollTop: top
+        },
+        1000
+      );
     });
   });
   
